@@ -18,7 +18,7 @@ def dessiner(dessin, d, n, i):
 		dessin.create_polygon(points,fil="red")
 		print("d: "+str(d)+", "+"n: "+str(n))
 		print((d+n)/4,(d+n)/4+(d+n)/2)
-		dessiner(dessin,(d+n)/4,(d+n)/4+(d+n)/2,i-1) 
+		dessiner(dessin,(d+n/2)/2,(d+n/2)/2+n/2,i-1) 
 
 if __name__ == '__main__':
 	Fenetre = Tk()
