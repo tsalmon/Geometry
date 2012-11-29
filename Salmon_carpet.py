@@ -9,16 +9,15 @@ def dessiner(dessin, d, n, i):
 		dessin.create_polygon(points)
 		#Bas droite
 		points = [aux, aux, aux, n, n, aux, n, n]
-		dessin.create_polygon(points,fill="cyan")
+		dessin.create_polygon(points)
 		#Haut droite 
 		points = [aux, d, n, d, aux, aux, n, aux]
-		dessin.create_polygon(points,fill="blue")
+		dessin.create_polygon(points)
 		#Bas gauche 
 		points = [d, aux, aux, aux, d, n, aux, n]
-		dessin.create_polygon(points,fil="red")
+		dessin.create_polygon(points)
 		print("d: "+str(d)+", "+"n: "+str(n))
-		print((d+n)/4,(d+n)/4+(d+n)/2)
-		dessiner(dessin,(d+n/2)/2,(d+n/2)/2+n/2,i-1) 
+		dessiner(dessin, (d+500/2)/2, (500/2+n)/2,i-1) 
 
 if __name__ == '__main__':
 	Fenetre = Tk()
