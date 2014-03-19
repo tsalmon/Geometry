@@ -1,3 +1,4 @@
+package dessin;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
@@ -23,24 +24,19 @@ class Ecran extends JPanel {
     int yArrow[];
     private Polygon poly;
 
-
-    BufferedImage buffer;
-	Graphics2D gBuffer;
 	Ecran() { 
 		xArrow = new int[7];
 		yArrow = new int[7];
 		poly = new Polygon(xArrow, yArrow, 7);
-		buffer = new BufferedImage 
-				(WIDTH, HEIGHT, 
-						BufferedImage.TYPE_INT_RGB);
-		gBuffer = (Graphics2D) buffer.getGraphics();
-		gBuffer.setColor(couleurBord);
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));
 	}
 
 	public void paintComponent(Graphics g) {
-		super.paintComponent(g); 
-        g.drawPolygon(poly);
+		Graphics2D g2 = (Graphics2D) g;
+		super.paintComponent(g2); 
+		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+		g2.drawPolygon(poly);
 	}
 	
 	public void init_a_b(int a, int b){

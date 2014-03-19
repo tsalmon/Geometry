@@ -1,4 +1,4 @@
-
+package dessin;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
@@ -33,8 +33,11 @@ class EcranEquilateral extends JPanel {
 	}
 
 	public void paintComponent(Graphics g) {
-		super.paintComponent(g); 
-        g.drawPolygon(poly);
+		Graphics2D g2 = (Graphics2D) g;
+		super.paintComponent(g2); 
+		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+		g2.drawPolygon(poly);
 	}
 	
 	public void init_a_b(int a, int b){
